@@ -22,7 +22,17 @@ public class DBConnector {
 			e.printStackTrace();
 		}
 		return con;
-
-		
 	}
+	
+	// データベースのコネクションをクローズするメソッド
+    public static void closeConnection(Connection con) {
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+	
 }
